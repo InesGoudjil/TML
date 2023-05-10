@@ -10,28 +10,32 @@ import javax.swing.JLabel;
 public class Mines extends JFrame {
     private static final long serialVersionUID = 4772165125287256837L;
 
-    private final int WIDTH = 250;
-    private final int HEIGHT = 290;
+    // Définition des constantes
+    private final int WIDTH = 250; // Largeur de la fenêtre
+    private final int HEIGHT = 290; // Hauteur de la fenêtre
 
-    private JLabel statusbar;
+    private JLabel statusbar; // Barre d'état
 
+    // Constructeur de la classe
     public Mines() {
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(WIDTH, HEIGHT);
-        setLocationRelativeTo(null);
-        setTitle("Minesweeper");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Ferme la fenêtre lorsque l'utilisateur clique sur le bouton
+                                                        // de fermeture
+        setSize(WIDTH, HEIGHT); // Définit la taille de la fenêtre
+        setLocationRelativeTo(null); // Centre la fenêtre sur l'écran
+        setTitle("Minesweeper"); // Définit le titre de la fenêtre
 
-        statusbar = new JLabel("");
-        add(statusbar, BorderLayout.SOUTH);
+        statusbar = new JLabel(""); // Crée une nouvelle barre d'état
+        add(statusbar, BorderLayout.SOUTH); // Ajoute la barre d'état en bas de la fenêtre
 
-        add(new Board(statusbar));
+        add(new Board(statusbar)); // Ajoute le Board de jeu
 
-        setResizable(false);
-        setVisible(true);
+        setResizable(false); // Empêche la redimension de la fenêtre
+        setVisible(true); // Rend la fenêtre visible
     }
 
+    // Méthode principale de la classe
     public static void main(String[] args) {
-        new Mines();
+        new Mines(); // Crée une nouvelle instance de la classe Mines
     }
 }
